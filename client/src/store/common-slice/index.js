@@ -12,7 +12,7 @@ export const getFeatureImages = createAsyncThunk(
   "/order/getFeatureImages",
   async () => {
     const response = await axios.get(
-      "http://localhost:5000/api/common/feature/get",
+      "https://mern-ecommerce-backend-by-me.onrender.com/api/common/feature/get",
       {
         withCredentials: true, // Optional: needed if backend uses cookies
       }
@@ -26,7 +26,7 @@ export const addFeatureImage = createAsyncThunk(
   "/order/addFeatureImage",
   async (image) => {
     const response = await axios.post(
-      "http://localhost:5000/api/common/feature/add",
+      "https://mern-ecommerce-backend-by-me.onrender.com/api/common/feature/add",
       { image },
       {
         withCredentials: true, // Include cookies if authentication is required
@@ -41,7 +41,7 @@ export const deleteFeatureImage = createAsyncThunk(
   "/order/deleteFeatureImage",
   async (id) => {
     const response = await axios.delete(
-      `http://localhost:5000/api/common/feature/delete/${id}`,
+      `https://mern-ecommerce-backend-by-me.onrender.com/api/common/feature/delete/${id}`,
       {
         withCredentials: true, // Ensure cookies are sent with the request
       }
