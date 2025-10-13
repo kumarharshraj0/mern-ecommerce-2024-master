@@ -14,7 +14,7 @@ const AdminContactMessages = () => {
     const fetchMessages = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('http://localhost:5000/api/admin/contact', {
+        const response = await axios.get('https://mern-ecommerce-backend-by-me.onrender.com/api/admin/contact', {
           withCredentials: true,
         });
         setMessages(response.data.messages);
