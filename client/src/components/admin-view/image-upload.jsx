@@ -15,7 +15,7 @@ function ProductImageUpload({
   setImageLoadingState,
   isEditMode,
   isCustomStyling = false,
-  uploadUrl = "http://localhost:5000/api/admin/products/upload-image", // Default to product upload URL
+  uploadUrl = "https://mern-ecommerce-backend-by-me.onrender.com/api/admin/products/upload-image", // Default to product upload URL
 }) {
   const inputRef = useRef(null);
 
