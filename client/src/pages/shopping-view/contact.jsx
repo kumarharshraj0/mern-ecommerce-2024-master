@@ -17,7 +17,7 @@ const Contact = () => {
     console.log(name, email, message);
 
     try {
-      const res = await axios.post("http://localhost:5000/api/shop/contact", {
+      const res = await axios.post("https://mern-ecommerce-backend-by-me.onrender.com/api/shop/contact", {
         name,
         email,
         message,
