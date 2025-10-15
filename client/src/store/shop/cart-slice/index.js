@@ -48,7 +48,7 @@ export const updateCartQuantity = createAsyncThunk(
   "cart/updateCartQuantity",
   async ({ userId, productId, quantity }) => {
     const response = await axios.put(
-      "https://mern-ecommerce-backend-by-me.onrender.comapi/shop/cart/update-cart",
+      "https://mern-ecommerce-backend-by-me.onrender.com/api/shop/cart/update-cart",
       {
         userId,
         productId,
