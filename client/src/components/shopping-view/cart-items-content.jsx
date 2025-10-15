@@ -12,7 +12,12 @@ function UserCartItemsContent({ cartItem }) {
   const { toast } = useToast();
 
   function handleUpdateQuantity(getCartItem, typeOfAction) {
-    if (typeOfAction == "plus") {
+    // ✅ FIXED: prevent sending quantity = 0
+    if (typeOfAction === "minus" && getCartItem.quantity <= 1) {
+      return;
+    }
+
+    if (typeOfAction === "plus") {
       let getCartItems = cartItems.items || [];
 
       if (getCartItems.length) {
@@ -24,8 +29,6 @@ function UserCartItemsContent({ cartItem }) {
           (product) => product._id === getCartItem?.productId
         );
         const getTotalStock = productList[getCurrentProductIndex].totalStock;
-
-        console.log(getCurrentProductIndex, getTotalStock, "getTotalStock");
 
         if (indexOfCurrentCartItem > -1) {
           const getQuantity = getCartItems[indexOfCurrentCartItem].quantity;
@@ -99,7 +102,7 @@ function UserCartItemsContent({ cartItem }) {
             onClick={() => handleUpdateQuantity(cartItem, "plus")}
           >
             <Plus className="w-4 h-4" />
-            <span className="sr-only">Decrease</span>
+            <span className="sr-only">Increase</span>
           </Button>
         </div>
       </div>
@@ -122,3 +125,4 @@ function UserCartItemsContent({ cartItem }) {
 }
 
 export default UserCartItemsContent;
+
